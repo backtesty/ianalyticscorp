@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Language } from './types';
 import { CONTENT } from './constants';
 import Header from './components/Header';
@@ -13,6 +13,24 @@ import { MessageCircle } from 'lucide-react';
 function App() {
   const [lang, setLang] = useState<Language>(Language.EN);
   const content = CONTENT[lang];
+
+  useEffect(() => {
+    document.title = content.seo.title;
+    
+    const updateMeta = (name: string, content: string) => {
+      let element = document.querySelector(`meta[name="${name}"]`);
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute('name', name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', content);
+    };
+
+    updateMeta('description', content.seo.description);
+    updateMeta('keywords', content.seo.keywords);
+    document.documentElement.lang = lang.toLowerCase();
+  }, [lang, content.seo]);
 
   return (
     <div className="min-h-screen bg-background text-slate-50 font-sans selection:bg-brand-500/30">

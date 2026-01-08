@@ -2,6 +2,11 @@ import { Content, Language } from './types';
 
 export const CONTENT: Record<Language, Content> = {
   [Language.ES]: {
+    seo: {
+      title: 'IAnalytics | Agentes de IA Empresariales',
+      description: 'Automatización inteligente para empresas. Optimice flujos de trabajo en Fintech, Legal y Logística con nuestros agentes de IA soberanos.',
+      keywords: 'IA, Agentes, Automatización, Fintech, Legal, Logística, Empresa, Inteligencia Artificial'
+    },
     nav: {
       home: 'Inicio',
       services: 'AI Agent Workers',
@@ -108,6 +113,11 @@ export const CONTENT: Record<Language, Content> = {
     },
   },
   [Language.EN]: {
+    seo: {
+      title: 'IAnalytics | Enterprise AI Agents',
+      description: 'Intelligent automation for enterprises. Optimize workflows in Fintech, Legal, and Logistics with our sovereign AI agents.',
+      keywords: 'AI, Agents, Automation, Fintech, Legal, Logistics, Enterprise, Artificial Intelligence'
+    },
     nav: {
       home: 'Home',
       services: 'AI Agent Workers',

@@ -21,6 +21,11 @@ export interface WorkflowStep {
 }
 
 export interface Content {
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
+  };
   nav: {
     home: string;
     services: string;
