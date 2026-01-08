@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 import { MessageCircle } from 'lucide-react';
 
 function App() {
-  const [lang, setLang] = useState<Language>(Language.ES);
+  const [lang, setLang] = useState<Language>(Language.EN);
   const content = CONTENT[lang];
 
   return (
